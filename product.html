@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">
+    <title>Product</title>
+</head>
+<body>
+    <div id="productContainer">
+    <p id="nameOut"></p>
+    <p id="prixOut"></p>
+    <p id="textaOut"></p>
+    <p id="widthOut"></p>
+    <p id="heightOut"></p>
+    <img id="photoOut" >
+    <div id="arrowHeight"></div>
+<div id="arrowWidth"></div>
+
+    </div>
+<div class="arrow-1"></div>
+<div class="arrow-1-double"></div>
+
+<div class="arrow-2"></div>
+<div class="arrow-2-double"></div>
+
+  
+
+    <button onclick="takeShot()" id="btn1">save</button>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+    const name = localStorage.getItem('name');
+    const prix = localStorage.getItem('prix');
+    const width = localStorage.getItem('width');
+    const height = localStorage.getItem('height');
+    const texta = localStorage.getItem('texta');
+    const photo = localStorage.getItem('photo');
+
+    const btn1 = document.getElementById('btn1');
+
+
+
+
+    document.getElementById('nameOut').textContent = `${name}`;
+    document.getElementById('prixOut').textContent = `Prix: ${prix} DH`;
+    document.getElementById('textaOut').textContent = ` ${texta}`;
+    document.getElementById('widthOut').textContent = ` ${width}cm`;
+    document.getElementById('heightOut').textContent = ` ${height}cm`;
+    
+    if(photo){
+        document.getElementById('photoOut').src = photo;
+    }
+    else{
+        document.getElementById('photoOut').alt = "No image provided";
+    }
+    function takeShot() {
+         const btn = document.getElementById('btn1');
+    btn.style.display = 'none';
+        html2canvas(document.getElementById("productContainer"), {
+            width:1200,
+            height:650,
+            scale:2,
+    y: 25
+        }).then(function(canvas) {
+            const link = document.createElement('a');
+            link.download = 'product_page.png';
+            link.href = canvas.toDataURL();
+            link.click();
+             btn.style.display = 'inline-block';
+        });
+
+    }
+    
+</script>
+
+</body>
+</html>

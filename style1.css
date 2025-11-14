@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box; /* يمنع padding و border من توسيع العنصر */
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden; /* يمنع التمرير الأفقي */
+    background: linear-gradient(to top, rgba(40, 167, 69, 0.95), rgba(77, 176, 160, 0.85));
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+#productContainer {
+    background: linear-gradient(to top, rgba(40, 167, 69, 0.95), rgba(77, 176, 160, 0.85));
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* لتكون خلف العناصر الأخرى */
+}
+
+
+
+/* العنوان */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: #ffeb3b; /* لون ملفت */
+    position: relative;
+    left: 500px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+}
+
+/* معلومات المنتج */
+#heightOut, #widthOut {
+    position: relative;
+    font-size: 26px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+#heightOut {
+    left: 530px;
+    top: -250px;
+}
+
+#widthOut {
+    left: 200px;
+    top: -470px;
+}
+
+/* وصف المنتج */
+#textaOut {
+    position: relative;
+    font-size: 23px;
+    left: 650px;
+    top: -110px;
+    width: 500px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* السعر واسم المنتج */
+#prixOut, #nameOut {
+    position: relative;
+    font-size: 42px;
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+}
+
+#prixOut {
+    left: 930px;
+    top: 280px;
+}
+
+#nameOut {
+    left: 650px;
+    top: 10px;
+}
+
+/* صورة المنتج */
+#photoOut {
+    width: 500px;       
+    height: 550px;  
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    border-radius: 25px;
+    border: 3px solid #ffeb3b;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+#photoOut:hover {
+    transform: scale(1.05);
+}
+
+#btn1 {
+    position: absolute;  /* ليكون فوق كل شيء */
+    top: 500px;           /* المسافة من الأعلى */
+    left: 1000px;         /* المسافة من اليمين */
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    z-index: 10;         /* أعلى من z-index للـ container */
+    transition: 0.3s ease;
+}
+
+#btn1:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* روابط التنقل */
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+    transform: scale(1.2);
+}
+
+/* السهم العمودي (يشير للأعلى والأسفل) */
+#arrowHeight {
+    position: absolute;
+    top: 110px;            /* بجانب الصورة */
+    left: 520px;
+    height: 550px;         /* نفس ارتفاع الصورة */
+    width: 4px;
+    background: #ffeb3b;
+}
+
+#arrowHeight::before,
+#arrowHeight::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* لتوسيط الرأس */
+    width: 12px;
+    height: 12px;
+    border-left: 4px solid #ffeb3b;
+    border-top: 4px solid #ffeb3b;
+}
+
+/* رأس السهم في الأعلى (يشير للأعلى) */
+#arrowHeight::before {
+    top: -8px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+/* رأس السهم في الأسفل (يشير للأسفل) */
+#arrowHeight::after {
+    bottom: -8px;
+    transform: translateX(-50%) rotate(-135deg);
+}
+
+
+/* السهم الأفقي (العرض) */
+#arrowWidth {
+    position: absolute;
+    top: 80px; /* فوق الصورة */
+    left: 10px;
+    width: 500px; /* نفس عرض الصورة */
+    height: 4px;
+    background: #ffeb3b;
+}
+
+#arrowWidth::before,
+#arrowWidth::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid #ffeb3b;
+    border-right: 4px solid #ffeb3b;
+}
+
+#arrowWidth::before {
+    left: -5px;
+    transform: rotate(-135deg);
+}
+
+#arrowWidth::after {
+    right: -5px;
+    transform: rotate(45deg);
+}
+

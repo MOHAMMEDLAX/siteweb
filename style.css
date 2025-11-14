@@ -1,0 +1,137 @@
+body {
+     margin: 0;
+    overflow-x: hidden; /* يمنع التمرير الأفقي */
+    background: linear-gradient(to top, rgba(40, 167, 69, 0.95), rgba(77, 176, 160, 0.85));
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+  display: flex;             /* تفعيل Flexbox */
+  justify-content: center;   /* توسيط أفقي */
+  align-items: center;       /* توسيط عمودي */
+}
+
+.app {
+  background: linear-gradient(to top, rgba(40, 167, 69, 0.2), rgba(77, 176, 160, 0.2));
+  padding: 200px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  width: 150px;       
+  height: 200px; 
+   
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  height: 65px;
+  background-color: rgba(40, 167, 69, 0.95); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 0 0 10px 10px;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+  transform: scale(1.1);
+}
+nav .logo {
+ width: 50px;
+ border-radius: 50px;
+ object-fit: cover;
+}
+
+
+#title {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+    top: -300px; 
+    left: 300px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+input {
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top: -180px;
+    left: -180px;
+    width: 500px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    position: relative;
+    top: -180px;
+    left: -180px;
+    color: white;
+}
+
+#description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    position: relative;
+    border-radius: 10px;
+    top: -160px;
+    left: -180px;
+    width: 500px;
+    height: 70px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 10px;
+    background-color: rgba(40, 167, 69, 0.15);
+    color: white;
+}
+
+#pk {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    position: relative;
+    top: -180px;
+    left: -160px;
+    color: #ff4d4d;
+    white-space: nowrap;
+   
+}
+
+#submit {
+    border-radius: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 590px;
+    color: white;
+    background-color: #28a745; /* نفس لون أزرار التصميم الأول */
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
