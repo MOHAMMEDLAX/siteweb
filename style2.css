@@ -1,4 +1,11 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* Navigation */
 nav {
   display: flex;
   justify-content: flex-start;
@@ -13,13 +20,13 @@ nav {
   width: 100%;
   z-index: 1000;
   border-radius: 0 0 10px 10px;
+  padding: 0 15px;
 }
-
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 25px;
+  margin: 0 15px;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -31,29 +38,31 @@ nav a:hover {
   color: #ffeb3b;
   transform: scale(1.1);
 }
+
 nav .logo {
- width: 50px;
- border-radius: 50px;
- object-fit: cover;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-
+/* Body */
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("closet.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
-
+/* Central text */
 #p1 {
-  font-size: 31px;
+  font-size: 28px;
   color: white;
   margin: 0;
-  padding: 25px 40px;
+  padding: 20px 25px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -65,14 +74,14 @@ body {
   transform: translate(-50%, -50%);
   max-width: 80%;
   width: 90%;
-  height: 35%;
+  height: auto;
   line-height: 1.4;
 }
 
-
+/* Button */
 button {
-  font-size: 20px;
-  padding: 12px 28px;
+  font-size: 18px;
+  padding: 12px 25px;
   border: none;
   border-radius: 8px;
   background-color: #28a745;
@@ -91,9 +100,9 @@ button:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-
+/* Footer */
 p {
-  font-size: 16px;
+  font-size: 14px;
   color: #f0f0f0;
   position: absolute;
   bottom: 15px;
@@ -103,7 +112,6 @@ p {
   opacity: 0.9;
 }
 
-
 hr {
   position: absolute;
   bottom: 50px;
@@ -111,4 +119,49 @@ hr {
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    gap: 15px;
+    height: 55px;
+  }
+  nav a {
+    font-size: 16px;
+    margin: 0 8px;
+  }
+  nav .logo {
+    width: 40px;
+  }
+  #p1 {
+    font-size: 22px;
+    padding: 15px 20px;
+    top: 35%;
+  }
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    top: 70%;
+  }
+  p {
+    font-size: 13px;
+  }
+  hr {
+    bottom: 40px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #p1 {
+    font-size: 18px;
+    padding: 10px 15px;
+    top: 30%;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+    top: 50%;
+  }
 }
